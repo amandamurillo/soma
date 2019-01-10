@@ -2,6 +2,7 @@ var song;
 var fft;
 var button;
 var w;
+var canvas;
 
 function toggleSong() {
   if (song.isPlaying()) {
@@ -16,34 +17,33 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(256, 256);
+  canvas = createCanvas(windowWidth, 300);
+  canvas.position(0, 0);
+  canvas.style('z-index', '1');
+  background(175);
   colorMode(HSB);
   angleMode(DEGREES);
-  button = createButton('toggle');
+  button = createButton('sound');
   button.mousePressed(toggleSong);
   song.play();
   fft = new p5.FFT(0, 64);
   w = width / 64;
 }
 
+
 function draw() {
   background(0);
   var spectrum = fft.analyze();
   // console.log(spectrum);
-  stroke(255);
-  //beginShape();
+  // stroke(255);
+  noStroke();
+  // beginShape();
   for (var i = 0; i < spectrum.length; i++) {
     var amp = spectrum[i];
     var y = map(amp, 0, 256, height, 0);
-    //fill(i, 255, 255);
-    rect(i * w,y, height, w, y);
+    fill(i, 255, 255);
+    rect(i * w, y, w - 2, height - y);
     //vertex(x, y);
-    //var y = map(amp, 0, 256, height, 0);
-    //rect(i * w, y, w - 2, height - y);
   }
-  //endShape();
-
-
-
-
+  // endShape();
 }
