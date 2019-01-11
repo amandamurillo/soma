@@ -46,15 +46,10 @@ module.exports = function (app) {
       });
     }
   });
-<<<<<<< HEAD
 
-};
+  // ************** Review ****************** //
 
-module.exports = function (app) {
   // GET route for getting all of the reviews
-=======
-  // Get all reviews
->>>>>>> fe9b287c38acfe7f17ddbd73d9a11fa14fa17c60
   app.get("/api/reviews", function (req, res) {
     db.Review.findAll({}).then(function (dbReviews) {
       res.json(dbReviews);
@@ -74,4 +69,9 @@ module.exports = function (app) {
       res.json(dbReview);
     });
   });
+
+};
+
+module.exports = function (app) {
+
 };

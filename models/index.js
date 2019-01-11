@@ -44,3 +44,6 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+
+var query = "https://api.spotify.com/v1/search?q=bob%20year:2014&type=album",
