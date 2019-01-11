@@ -1,5 +1,5 @@
 var db = require("../models");
-
+var path = require("path");
 module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
@@ -11,6 +11,10 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/artist", function(req, res){
+    res.render("artist");
+  })
+
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
@@ -19,6 +23,10 @@ module.exports = function (app) {
       });
     });
   });
+
+  app.get("/lemmesee", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

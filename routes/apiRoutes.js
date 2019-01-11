@@ -46,11 +46,6 @@ module.exports = function (app) {
       });
     }
   });
-
-};
-
-
-module.exports = function (app) {
   // Get all reviews
   app.get("/api/reviews", function (req, res) {
     db.Review.findAll({}).then(function (dbReviews) {
