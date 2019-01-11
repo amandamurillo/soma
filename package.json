@@ -20,11 +20,7 @@
     "jquery-bar-rating": "^1.2.2",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
-<<<<<<< HEAD
-    "passport-local-sequelize": "^0.8.0",
-=======
     "passport-local": "^1.0.0",
->>>>>>> fe9b287c38acfe7f17ddbd73d9a11fa14fa17c60
     "sequelize": "^4.38.0"
   },
   "devDependencies": {

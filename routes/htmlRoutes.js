@@ -1,7 +1,23 @@
 var db = require("../models");
 var path = require("path");
 module.exports = function (app) {
+
   // Load index page
+  app.get("/index", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  // Load create account page
+  app.get("/create", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/create.html"));
+  });
+
+  // Load signIn page
+  app.get("/lemmesee", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  });
+
+
   app.get("/", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
       res.render("index", {
@@ -24,9 +40,6 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/lemmesee", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  })
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
