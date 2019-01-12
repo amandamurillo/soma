@@ -6,11 +6,17 @@ module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the profile page.
   // Otherwise the user will be sent an error
+
+  // Login User
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    res.json("/profile");
+
+    // we need to store a session or a loggedInVariable
+    res.redirect("/")
   });
 
   // Route for creating a new user. If the user is created successfully, proceed to log the user in, otherwise send back an error
+
+  // Sign Up
   app.post("/api/create", function (req, res) {
     console.log(req.body);
     db.User.create({
@@ -18,7 +24,7 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password
     }).then(function () {
-      res.redirect(307, "/api/login");
+      res.redirect("/login");
     }).catch(function (err) {
       console.log(err);
       res.json(err);
@@ -70,8 +76,4 @@ module.exports = function (app) {
     });
   });
 
-};
-
-module.exports = function (app) {
-
-};
+}
