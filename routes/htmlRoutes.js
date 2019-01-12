@@ -3,17 +3,23 @@ var path = require("path");
 module.exports = function (app) {
 
   // Load index page
-  app.get("/index", function(req, res){
+  app.get("/index", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   // Load create account page
-  app.get("/create", function(req, res){
+  app.get("/create", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/create.html"));
   });
 
+  // Load login page
+
+  app.get("/login", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/login.html"))
+  })
+
   // Load signIn page
-  app.get("/lemmesee", function(req, res){
+  app.get("/lemmesee", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/signIn.html"));
   });
 
@@ -27,7 +33,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/artist", function(req, res){
+  app.get("/artist", function (req, res) {
     res.render("artist");
   })
 
