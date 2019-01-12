@@ -3,12 +3,6 @@
  */
 
 /* Links */
-button,
-button:focus,
-button:hover {
-  color: #fff;
-}
-
 a,
 a:focus,
 a:hover {
@@ -36,7 +30,7 @@ background-color: #0f1723;
   
 }
 
-/* body {
+body {
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -46,7 +40,7 @@ background-color: #0f1723;
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
-} */
+}
 
 h1 { font-size: 5rem;
     margin-top: 50px;
@@ -110,36 +104,19 @@ h1 { font-size: 5rem;
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
+.cover-heading {
+
+        width: 300px;
+        height: 200px;
+
+}
 
 
 /*
  * Footer
  */
-/* .mastfoot {
+.mastfoot {
   color: rgba(255, 255, 255, .5);
-} */
-.footer {
-  /* position: fixed; */
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
-  font-size: smaller;
-}
-
-/*Card*/
-.card{
-  background-color: transparent;
-  color: white;
-}
-#band-card-info{
-  text-align: left;
-}
-#form_message{
-  background-color: white;
-}
-#review-submit{
-  float: left;
 }
 
 /* Search Bar */
@@ -147,7 +124,6 @@ h1 { font-size: 5rem;
 .searchbar{
     margin-bottom: auto;
     margin-top: auto;
-    margin-right: 10px;
     height: 60px;
     background-color: #353b48;
     border-radius: 30px;
@@ -263,7 +239,7 @@ h1 { font-size: 5rem;
 
 #soma {
 
-  width: 200px;
-  height: 200px;
+    width: 200px;
+    height: 200px;
 
 }
