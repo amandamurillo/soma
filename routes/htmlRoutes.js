@@ -2,34 +2,67 @@ var db = require("../models");
 var path = require("path");
 module.exports = function (app) {
 
+
+  // NO LONGER USING THE HTML PAGES
+
   // Load index page
+  // app.get("/index", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
+  // });
+
+  // // Load create account page
+  // app.get("/create", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/create.html"));
+  // });
+
+  // // Load signIn page
+  // app.get("/lemmesee", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  // });
+
+
+  // app.get("/", function (req, res) {
+  //   db.Example.findAll({}).then(function (dbExamples) {
+  //     res.render("index", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
+
+
   app.get("/index", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("index", {
+      style: "index.css"
+    });
   });
 
-  // Load create account page
+  app.get("/signIn", function(req, res){
+    res.render("signIn", {
+      style: "signIn.css"
+    });
+  });
+
   app.get("/create", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/create.html"));
-  });
-
-  // Load signIn page
-  app.get("/lemmesee", function(req, res){
-    res.sendFile(path.join(__dirname, "../public/signIn.html"));
-  });
-
-
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    res.render("create", {
+      style: "create.css"
     });
   });
 
   app.get("/artist", function(req, res){
-    res.render("artist");
-  })
+    res.render("artist", {
+      style: "artist.css"
+    });
+  });
+
+  app.get("/user", function(req, res){
+    res.render("user", {
+      style: "user.css"
+    });
+  });
+
+  
+
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {
