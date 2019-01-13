@@ -1,68 +1,66 @@
 var db = require("../models");
 var path = require("path");
-var artistUrl;
-var Spotify = require("node-spotify-api");
-var keys = require("../keys");
-var spotify = new Spotify(keys);
-
-
 module.exports = function (app) {
 
 
-  app.post("/search-spotify", function (req, res) {
-    var artistSearch = req.body.artist.trim();
-
-    spotify.search({ type: "artist", query: artistSearch, limit: 1 }, function (err, data) {
-      // Error handler
-      if (err) {
-        return console.log(err);
-      }
-
-      // This is the variable we are passing through handlebars
-      artistUrl = data.artists.items[0].href;
-
-      res.redirect("/artist");
-    });
-
-    // res.redirect("/");
-  });
+  // NO LONGER USING THE HTML PAGES
 
   // Load index page
-  app.get("/", function (req, res) {
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
-    res.render("../views/layouts/main");
-  });
+  // app.get("/index", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/index.html"));
+  // });
 
-  // Load create account page
-  app.get("/create", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/create.html"));
-  });
+  // // Load create account page
+  // app.get("/create", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/create.html"));
+  // });
 
-  // Load signIn page
+  // // Load signIn page
+  // app.get("/lemmesee", function(req, res){
+  //   res.sendFile(path.join(__dirname, "../public/signIn.html"));
+  // });
 
-  app.get("/signIn", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/signIn.html"))
-  })
 
-  // Load user profile page
-  app.get("/user", function (req, res) {
-    res.render("user", { test: "works" });
-  });
+  // app.get("/", function (req, res) {
+  //   db.Example.findAll({}).then(function (dbExamples) {
+  //     res.render("index", {
+  //       msg: "Welcome!",
+  //       examples: dbExamples
+  //     });
+  //   });
+  // });
 
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("main", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+  //Updated Routes that link to individual .css sheets
+
+  app.get("/index", function(req, res){
+    res.render("index", {
+      style: "index.css"
     });
   });
 
+  app.get("/signIn", function(req, res){
+    res.render("signIn", {
+      style: "signIn.css"
+    });
+  });
 
-  app.get("/artist", function (req, res) {
-    res.render("artist", { spotifyArtist: artistUrl });
-  })
+  app.get("/create", function(req, res){
+    res.render("create", {
+      style: "create.css"
+    });
+  });
 
+  app.get("/artist", function(req, res){
+    res.render("artist", {
+      style: "artist.css"
+    });
+  });
+
+  app.get("/user", function(req, res){
+    res.render("user", {
+      style: "user.css"
+    });
+  });
 
 
   // Load example page and pass in an example by id

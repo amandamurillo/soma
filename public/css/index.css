@@ -48,6 +48,13 @@ h1 { font-size: 5rem;
 }
 
 
+.fig_btn {
+
+  height :200px;
+  width: 200px;
+}
+
+
 /*
  * Header
  */
@@ -200,7 +207,7 @@ h1 { font-size: 5rem;
           height: 186px;
           left: 10px;
           top: 10px;
-          background: black;
+          /* background: black; */
           overflow: hidden;
       }
       #carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
@@ -216,7 +223,16 @@ h1 { font-size: 5rem;
       img{
           cursor: pointer;
           transition: all .5s ease;
+          height:200px;
+          width: 200px
       }
+
+      .custom-style {
+        height:200px;
+        width: 200px
+      }
+
+
       
       @keyframes rotation{
           from{
