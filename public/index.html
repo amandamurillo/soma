@@ -27,7 +27,7 @@
 	<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
 		<main role="main" class="inner cover">
-			<img id="soma" class="cover-heading"=src="SOMAfractal.png" alt="Soma Logo">
+			<img id="soma" class="cover-heading" src="SOMAfractal.png" alt="Soma Logo">
 
 			<div class="container-2">
 				<div id="carousel">
@@ -60,7 +60,13 @@
 				</div>
 			</div>
 			<a href="/create" class="btn btn-lg btn-secondary">CREATE</a>
-			<a href="/login" class="btn btn-lg btn-secondary">LOGIN</a>
+			<a href="/signIn" class="btn btn-lg btn-secondary">LOGIN</a>
+			<a href="/logout" class="btn btn-lg btn-secondary">LOGOUT</a>
+
+			<form action="/search-spotify" method="POST">
+				<input type="text" name="artist">
+				<input type="submit" value="search artist">
+			</form>
 
 			</p>
 		</main>
