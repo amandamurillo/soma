@@ -11,7 +11,7 @@ function toggleSong() {
     song.play();
   }
 }
-function preload() {
+ function preload() {
   song = loadSound('js/loyal.mp3');
 }
 
