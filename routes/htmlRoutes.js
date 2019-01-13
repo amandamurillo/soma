@@ -30,6 +30,7 @@ module.exports = function (app) {
   //   });
   // });
 
+  //Updated Routes that link to individual .css sheets
 
   app.get("/index", function(req, res){
     res.render("index", {
@@ -60,8 +61,6 @@ module.exports = function (app) {
       style: "user.css"
     });
   });
-
-  
 
 
   // Load example page and pass in an example by id
