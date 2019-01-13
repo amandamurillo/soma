@@ -5,6 +5,7 @@ var Spotify = require("node-spotify-api");
 var keys = require("../keys");
 var spotify = new Spotify(keys);
 
+
 module.exports = function (app) {
 
 
@@ -17,10 +18,10 @@ module.exports = function (app) {
         return console.log(err);
       }
 
-      // console.log(data.artists.items[0].href);
+      // This is the variable we are passing through handlebars
       artistUrl = data.artists.items[0].href;
-      res.redirect("/artist");
 
+      res.redirect("/artist");
     });
 
     // res.redirect("/");
@@ -56,6 +57,7 @@ module.exports = function (app) {
       });
     });
   });
+
 
   app.get("/artist", function (req, res) {
     res.render("artist", { spotifyArtist: artistUrl });
