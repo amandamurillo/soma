@@ -6,7 +6,7 @@ var canvas;
 
 function toggleSong() {
   if (song.isPlaying()) {
-    song.pause();
+    song.stop();
   } else {
     song.play();
   }
@@ -16,13 +16,14 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, 300);
+  canvas = createCanvas(windowWidth, 200);
   canvas.position(0, 0);
+  // canvas.addClass('canvas')
   canvas.style('z-index', '1');
-  background(175);
+  background(100);
   colorMode(HSB);
   angleMode(DEGREES);
-  button = createButton('sound');
+  button = createButton('sound').addClass('sound_btn')
   button.mousePressed(toggleSong);
   song.play();
   fft = new p5.FFT(0, 64);
