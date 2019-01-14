@@ -12,7 +12,7 @@ function toggleSong() {
   }
 }
 function preload() {
-  // song = loadSound('js/loyal.mp3');
+  song = loadSound('js/loyal.mp3');
 }
 
 function setup() {
