@@ -16,10 +16,11 @@ function toggleSong() {
 }
 
 function setup() {
-  canvas = createCanvas(windowWidth, 300);
+  canvas = createCanvas(windowWidth, 200);
   canvas.position(0, 0);
+  // canvas.addClass('canvas')
   canvas.style('z-index', '1');
-  background(175);
+  background(100);
   colorMode(HSB);
   angleMode(DEGREES);
   button = createButton('sound').addClass('sound_btn')
