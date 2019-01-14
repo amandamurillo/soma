@@ -3,10 +3,9 @@ var path = require("path");
 var artistUrl;
 var spotifyArtist = {
   url: "",
-  img: "",
-  bandMembers: "",
+  images: "",
   bandName: "",
-  albums: [],
+  genres: [],
 };
 
 var Spotify = require("node-spotify-api");
@@ -19,14 +18,21 @@ module.exports = function (app) {
   app.post("/search-spotify", function (req, res) {
     var artistSearch = req.body.artist.trim();
 
-    spotify.search({ type: "artist", query: artistSearch, limit: 1 }, function (err, data) {
+    spotify.search({ type: "artist", query: artistSearch, limit: 4 }, function (err, data) {
+
       // Error handler
       if (err) {
         return console.log(err);
       }
 
-      console.log(data.items[0]);
+      console.log(data.artists.items[1]);
+      // console.log(data.artists.items[0]);
       artistUrl = data.artists.items[0].href;
+      spotifyArtist.url = data.artists.items[0].external_urls.spotify;
+      spotifyArtist.images = data.artists.items[0].images[0].url;
+      spotifyArtist.bandName = data.artists.items[0].name;
+      spotifyArtist.genres = data.artists.items[0].genres;
+
       res.redirect("/artist");
 
     });
@@ -36,8 +42,7 @@ module.exports = function (app) {
 
   // Load index page
   app.get("/", function (req, res) {
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
-    res.render("../views/layouts/main");
+    res.render("index");
   });
 
   // Load create account page
@@ -66,7 +71,12 @@ module.exports = function (app) {
   });
 
   app.get("/artist", function (req, res) {
-    res.render("artist", { spotifyArtist: artistUrl });
+    res.render("artist", {
+      url: spotifyArtist.url,
+      images: spotifyArtist.images,
+      bandName: spotifyArtist.bandName,
+      genres: spotifyArtist.genres,
+    });
   })
 
 
