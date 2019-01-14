@@ -31,7 +31,7 @@ module.exports = function (app) {
       spotifyArtist.url = data.artists.items[0].external_urls.spotify;
       spotifyArtist.images = data.artists.items[0].images[0].url;
       spotifyArtist.bandName = data.artists.items[0].name;
-      spotifyArtist.genres = data.artists.items[0].genres;
+      spotifyArtist.genres = data.artists.items[0].genres[0];
 
       res.redirect("/artist");
 
@@ -42,23 +42,43 @@ module.exports = function (app) {
 
   // Load index page
   app.get("/", function (req, res) {
-    res.render("index");
+    res.render("index", {
+      createCss: "create.css",
+      artistCss: "artist.css",
+      signInCss: "signIn.css",
+      userCss: "user.css"
+    });
   });
 
   // Load create account page
   app.get("/create", function (req, res) {
-    res.render("create");
+    res.render("create", {
+      createCss: "create.css",
+      artistCss: "artist.css",
+      signInCss: "signIn.css",
+      userCss: "user.css"
+    });
   });
 
   // Load signIn page
 
   app.get("/signIn", function (req, res) {
-    res.render("signIn");
+    res.render("signIn", {
+      createCss: "create.css",
+      artistCss: "artist.css",
+      signInCss: "signIn.css",
+      userCss: "user.css"
+    });
   })
 
   // Load user profile page
   app.get("/user", function (req, res) {
-    res.render("user", { test: "works" });
+    res.render("user", {
+      createCss: "create.css",
+      artistCss: "artist.css",
+      signInCss: "signIn.css",
+      userCss: "user.css"
+    });
   });
 
   app.get("/", function (req, res) {
@@ -76,19 +96,23 @@ module.exports = function (app) {
       images: spotifyArtist.images,
       bandName: spotifyArtist.bandName,
       genres: spotifyArtist.genres,
+      createCss: "create.css",
+      artistCss: "artist.css",
+      signInCss: "signIn.css",
+      userCss: "user.css"
     });
   })
 
 
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
+  // app.get("/example/:id", function (req, res) {
+  //   db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+  //     res.render("example", {
+  //       example: dbExample
+  //     });
+  //   });
+  // });
 
 
   // Render 404 page for any unmatched routes
