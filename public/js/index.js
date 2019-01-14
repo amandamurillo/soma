@@ -6,7 +6,7 @@ var canvas;
 
 function toggleSong() {
   if (song.isPlaying()) {
-    song.pause();
+    song.stop();
   } else {
     song.play();
   }
@@ -22,7 +22,7 @@ function setup() {
   background(175);
   colorMode(HSB);
   angleMode(DEGREES);
-  button = createButton('sound');
+  button = createButton('sound').addClass('sound_btn')
   button.mousePressed(toggleSong);
   song.play();
   fft = new p5.FFT(0, 64);

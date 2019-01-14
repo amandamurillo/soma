@@ -30,6 +30,11 @@ background-color: #0f1723;
   
 }
 
+.sound_btn {
+  height: 100px;
+  width:50px;
+}
+
 body {
   display: -ms-flexbox;
   display: -webkit-box;
