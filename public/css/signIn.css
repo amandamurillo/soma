@@ -25,7 +25,9 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #0f1723
+  /* background-color: #0f1723 */
+  background-color: black;
+
 }
 
 .form-signin {

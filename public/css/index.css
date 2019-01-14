@@ -26,9 +26,18 @@ a:hover {
 html,
 body {
   height: 100%;
-background-color: #0f1723;
+background-color: black;
   
 }
+
+.sound_btn {
+  height: 100px;
+  width:50px;
+}
+
+/* .canvas {
+  height: 200px;
+} */
 
 body {
   display: -ms-flexbox;
