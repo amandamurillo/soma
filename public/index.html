@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>FFT</title>
+	<title>FFTs</title>
 
 
 	<!-- Font awesome -->
@@ -52,23 +52,23 @@
 				</div>
 			</div>
 			<div class="container h-100">
-				<div class="d-flex justify-content-center h-100">
-					<div class="searchbar">
-						<input class="search_input" type="text" name="" placeholder="Search...">
-						<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+				<form action="/search-spotify" method="POST">
+					<div class="d-flex justify-content-center h-100">
+						<div class="searchbar">
+							<input class="search_input" type="text" name="artist" placeholder="Search...">
+							<!-- <a href="#" class="search_icon"><i class="fas fa-search"></i></a> -->
+							<input type="submit" value="search artist">
+						</div>
 					</div>
-				</div>
+
+
+				</form>
 			</div>
 			<a href="/create" class="btn btn-lg btn-secondary">CREATE</a>
 			<a href="/signIn" class="btn btn-lg btn-secondary">LOGIN</a>
 			<a href="/logout" class="btn btn-lg btn-secondary">LOGOUT</a>
-
-			<form action="/search-spotify" method="POST">
-				<input type="text" name="artist">
-				<input type="submit" value="search artist">
-			</form>
-
 			</p>
+
 		</main>
 
 		<footer class="mastfoot mt-auto">
