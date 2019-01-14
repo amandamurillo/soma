@@ -9,9 +9,10 @@ module.exports = function (app) {
 
   // Login User
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    console.log(req.user);
 
     // we need to store a session or a loggedInVariable
-    res.redirect("/")
+    res.redirect("/user");
   });
 
   // Route for creating a new user. If the user is created successfully, proceed to log the user in, otherwise send back an error
@@ -24,7 +25,7 @@ module.exports = function (app) {
       email: req.body.email,
       password: req.body.password
     }).then(function () {
-      res.redirect("/login");
+      res.redirect("/signIn");
     }).catch(function (err) {
       console.log(err);
       res.json(err);
@@ -32,9 +33,21 @@ module.exports = function (app) {
     });
   });
 
+  // Tracking if the user is logged in
+  function isLoggedIn(req, res, next) {
+
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+      return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+  }
+
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
+    console.log(req.user);
     res.redirect("/");
   });
 
@@ -76,4 +89,5 @@ module.exports = function (app) {
     });
   });
 
-}
+};
+
