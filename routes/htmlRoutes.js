@@ -5,6 +5,7 @@ var spotifyArtist = {
   url: "",
   images: "",
   bandName: "",
+  genres: [],
 };
 
 var Spotify = require("node-spotify-api");
@@ -27,9 +28,10 @@ module.exports = function (app) {
       console.log(data.artists.items[1]);
       // console.log(data.artists.items[0]);
       artistUrl = data.artists.items[0].href;
-      spotifyArtist.url = data.artists.items[0].href;
+      spotifyArtist.url = data.artists.items[0].external_urls.spotify;
       spotifyArtist.images = data.artists.items[0].images[0].url;
       spotifyArtist.bandName = data.artists.items[0].name;
+      spotifyArtist.genres = data.artists.items[0].genres;
 
       res.redirect("/artist");
 
@@ -73,6 +75,7 @@ module.exports = function (app) {
       url: spotifyArtist.url,
       images: spotifyArtist.images,
       bandName: spotifyArtist.bandName,
+      genres: spotifyArtist.genres,
     });
   })
 

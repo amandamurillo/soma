@@ -8,7 +8,7 @@
 
 				</a>
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
+			{{!-- <form class="form-inline my-2 my-lg-0">
 				<div class="searchbar">
 					<input class="search_input" type="text" name="" placeholder="Search...">
 					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
@@ -21,7 +21,7 @@
 					<!-- <a href="#" class="btn btn-lg btn-secondary">LOGIN</a> -->
 					<button type="button" class="btn btn-secondary btn-lg" id="myBtn">Login</button>
 
-				</li>
+				</li> --}}
 	</nav>
 
 
@@ -55,14 +55,13 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card" style="width: 20rem;">
-					<img src="http://images2.fanpop.com/image/photos/12200000/QOTSA-queens-of-the-stone-age-12294088-1440-1080.jpg"
-					 class="card-img-top" alt="...">
+					<img src={{images }} class="card-img-top" alt="...">
 					<div class="card-body">
-						<h5 class="card-title">Queens of the Stone Age</h5>
+						<h5 class="card-title"> {{ bandName }} </h5>
 						<p class="card-text" id="band-card-info">
-							<b>Genre:</b> Rock<br>
-							<b>Years active:</b> 1996-present<br>
-							<b>Website:</b> <a href="http://www.qotsa.com/">qotsa.com</a>
+							<b>Genre:</b> {{ genre }}<br>
+
+							<b>Website:</b> <a href={{ url }} target="_blank">Spotify Link</a>
 						</p>
 					</div>
 				</div>
@@ -102,8 +101,7 @@
 							<img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://www.electricferret.com/static/images/cbub/cbub_contender_image/8/2745/thumb_11582.png"
 							 alt="Avatar" height="100px" width="100px">
 							<div class="media-body">
-								<h5 class="mt-0 font-weight-bold blue-text">Mr.T {{ bandName }} {{ url }}</h5>
-								<img src={{ images }} alt="">
+								<h5 class="mt-0 font-weight-bold blue-text">Mr.T </h5>
 								I pity the fool that hasn't watched QOTSA live.
 							</div>
 						</div>
