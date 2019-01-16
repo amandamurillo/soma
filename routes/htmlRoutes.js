@@ -43,7 +43,7 @@ module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
     res.render("index", {
-      createCss: "create.css",
+      indexCss: "index.css",
       artistCss: "artist.css",
       signInCss: "signIn.css",
       userCss: "user.css"
