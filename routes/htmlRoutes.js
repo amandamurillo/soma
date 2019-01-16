@@ -43,20 +43,14 @@ module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
     res.render("index", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
+      style: "index.css"
     });
   });
 
   // Load create account page
   app.get("/create", function (req, res) {
     res.render("create", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
+      style: "create.css"
     });
   });
 
@@ -64,20 +58,14 @@ module.exports = function (app) {
 
   app.get("/signIn", function (req, res) {
     res.render("signIn", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
+      style: "signIn.css"
     });
   })
 
   // Load user profile page
   app.get("/user", function (req, res) {
     res.render("user", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
+      style: "user.css"
     });
   });
 
@@ -92,14 +80,11 @@ module.exports = function (app) {
 
   app.get("/artist", function (req, res) {
     res.render("artist", {
+      style: "artist.css",
       url: spotifyArtist.url,
       images: spotifyArtist.images,
       bandName: spotifyArtist.bandName,
       genres: spotifyArtist.genres,
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
     });
   })
 
