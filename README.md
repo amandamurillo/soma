@@ -4,14 +4,13 @@
 
 <img width="275" height="200" alt="screen shot 2019-01-12 at 11 28 30 pm" src="https://user-images.githubusercontent.com/40437294/51082719-e059ee00-16c1-11e9-960f-8a68b39ab896.png">
 
-Soma is soma-ch more than a regular schmegular social media platform. Soma allows you to review live performances from an artist(s), create your own profile to save upcoming concert dates, and make sure that the artist(s) you sold your left kidney to see, will be worth it. 
+Soma is soma-ch more than a regular schmegular social media platform. Soma allows you to review live performances from an artist(s), create your own profile to save upcoming concert dates, and make sure that the artist(s) you sold your left kidney to see will be worth it. 
 
 Soma uses the Bandsintown API to get upcoming concert dates that you can add to your profile calendar, the Spotify API to get songs,  
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 
 
 ### Prerequisites
@@ -88,5 +87,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Logo creator : **Jarren Pat
+* Logo creator : **Jarren Patao
 
