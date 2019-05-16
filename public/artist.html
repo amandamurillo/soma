@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Artist Page</title>
+
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	 crossorigin="anonymous">
+	 
+
+	 <!-- <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700" rel="stylesheet"> -->
+	 <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Permanent+Marker|Rock+Salt|Libre+Baskerville:700" rel="stylesheet">
+
+	<!-- Material Design for Bootstrap fonts and icons -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+	<!-- Material Design for Bootstrap CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+	 integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+	<!-- CSS -->
+	<link type="text/css" rel="stylesheet" href="./css/artist.css" media="screen" title="no title">
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-black bg-black" id="navbar">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<a class="navbar-brand" href="/">
+					<img src="../public/images/SOMAfractal.png" width="150"     height="100" class="d-inline-block align-top mr-3"
+					alt="Somaimg">
+				</a>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<div class="searchbar">
+					<input class="search_input" type="text" name="" placeholder="Search...">
+					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+				</div>
+			</form>
+			<ul class="nav pull-right">
+				<div class="nav-item">
+					<button type="button" href="#" class="btn btn-secondary btn-lg" id="myBtn">Login</button>
+				</div> 
+			</ul>
+	</nav>
+
+	<div class="artist container blur-box">
+			Queens of the Stone Age
+		</div>
+	<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+
+		<main role="main" class="inner cover">
+				<div class="fa container">
+				<i class="fab fa-facebook fa-2x"></i>
+				<i class="fab fa-instagram fa-2x"></i>
+				<i class="fab fa-youtube fa-2x"></i>
+				<i class="fab fa-spotify fa-2x"></i>
+				<i class="fab fa-soundcloud fa-2x"></i>
+				</div>
+		</main>
+	</div>
+
+
+	<div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card" style="width: 20rem;">
+					<div class="card-body">
+						<canvas id="myChart" width="400" height="400"></canvas>
+
+						<h5 class="card-title"> BandName</h5>
+						<p class="card-text">
+
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="card" style="width: 400px; align-items: center">
+					<div class="card-body">
+					<iframe src="https://open.spotify.com/embed/album/2OMdsA2I4RxrHCyogwKGvF" width="370" height="450" frameborder="0"
+					 allowtransparency="true" allow="encrypted-media"></iframe>
+					</div>
+				</div>
+			</div> 
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="form-group">
+					<textarea id="form_message" name="message" class="form-control" placeholder=" Give us your feedback" rows="4"
+					 required="required" data-error="Please, leave us a message.">
+					</textarea>
+					<div class="help-block with-errors"></div>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<input type="submit" class="btn btn-outline-success btn-send" value="Submit Review" id="review-submit">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<div class="card" >
+							<div class="card-body">
+								<h5 class="card-title">Live Show Rating:</h5>
+								<p class="card-text">Radar chart goes here</p>
+									<div class="media">
+										<img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://www.electricferret.com/static/images/cbub/cbub_contender_image/8/2745/thumb_11582.png" alt="Avatar" height="100px" width="100px">
+									<div class="media-body">
+										<h5 class="mt-0 font-weight-bold blue-text">Mr.T</h5>
+										I pity the fool that hasn't watched QOTSA live.
+									</div>
+								  	</div>
+							</div>
+						</div>
+
+
+						<div class="card">
+								<div class="card-body">
+									<h5 class="card-title">Live Show Rating:</h5>
+									<p class="card-text">Radar chart goes here</p>
+										<div class="media">
+												<img class="d-flex rounded-circle avatar z-depth-1-half mr-3" src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/17/25/1497881882-ron-burgundy.jpg?crop=0.5618556701030928xw:1xh;center,top&resize=100:*"
+												alt="Avatar">
+										<div class="media-body">
+														<h5 class="mt-0 font-weight-bold blue-text">Ron Burgundy</h5>
+														By the beard of Zeus! This band is absolutely breathtaking to see live. They had me
+														feeling like I was in a glass case of emotions. Stay classy QOTSA.
+													</div>
+										  </div>
+								</div>
+							</div>
+			</div>
+					</div>  
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br>
+	<footer class="footer">
+		<div class="container text-center">
+			<span class="text-muted">&copy; 2018 Soma </span>
+		</div>
+	</footer>
+
+
+	<!-- Material for bootstrap -->
+	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<script type="text/javascript" src="./js/chart.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

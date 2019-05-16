@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FFT</title>
+    <title>Home Page</title>
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
@@ -21,7 +22,7 @@
 <body class="text-center">
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <main role="main" class="inner cover">
-            <img id="soma" class="cover-heading" src="SOMAfractal.png" alt="Soma Logo">
+            <img id="soma" class="cover-heading" src="./images/SOMAfractal.png" alt="Soma Logo">
             <div class="container-2">
                 <div id="carousel">
                     <figure class="btn" id="cardiB_button"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Cardi_B_-_Invasion_of_Privacy.png/220px-Cardi_B_-_Invasion_of_Privacy.png"
@@ -44,40 +45,47 @@
                             alt=""></figure>
                 </div>
             </div>
-            <div class="container h-100">
-                <div class="d-flex justify-content-center h-100">
+
+            <div class="container-3">
+                <div id="p5container">
+                    
+                </div>
+                <div class="d-flex justify-content-center h-100 ">
                     <div class="searchbar">
                         <input class="search_input" type="text" name="" placeholder="Enter Artist Name">
-                        <!-- <a href="#" class="search_icon"><i class="fas fa-search"></i></a> -->
+                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
                     </div>
                 </div>
             </div>
-            <a href="/create" class="btn btn-lg btn-secondary">CREATE</a>
-            <a href="/signIn" class="btn btn-lg btn-secondary">LOGIN</a>
-            <a href="/logout" class="btn btn-lg btn-secondary">LOGOUT</a>
-            <!-- Please style this form -->
+            <div class='homebtns' id="homebtns">
+                <a href="/create" class="btn btn-lg btn-secondary">CREATE</a>
+                <a href="/signIn" class="btn btn-lg btn-secondary">LOGIN</a>
+            </div>
+            
+            <!-- Please style this form
             <form action="/search-spotify" method="POST">
                 <input type="text" name="artist" placeholder="Enter Artist Name">
                 <input type="submit" value="Search">
-            </form>
+            </form> -->
         </main>
         <footer class="mastfoot mt-auto">
             <div class="inner">
+                footer
             </div>
         </footer>
     </div>
-    <!-- Material for bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
-        crossorigin="anonymous"></script>
+    
+
+<!-- Material for bootstrap -->
+	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
     <!-- p5 lib -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
-    <script>$(document).ready(function () { $('body').bootstrapMaterialDesign(); });</script>
     <!-- js file -->
     <script type="text/javascript" src="./js/index.js"></script>
 </body>

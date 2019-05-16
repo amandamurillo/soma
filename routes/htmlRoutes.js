@@ -1,6 +1,13 @@
 var db = require("../models");
 var path = require("path");
+var axios = require("axios");
+var Spotify = require("node-spotify-api");
+var keys = require("../keys");
+var spotify = new Spotify(keys);
+
+
 var artistUrl;
+
 var spotifyArtist = {
   url: "",
   images: "",
@@ -8,12 +15,11 @@ var spotifyArtist = {
   genres: [],
 };
 
-var Spotify = require("node-spotify-api");
-var keys = require("../keys");
 var spotify = new Spotify(keys);
 
-module.exports = function (app) {
 
+
+module.exports = function (app) {
 
   app.post("/search-spotify", function (req, res) {
     var artistSearch = req.body.artist.trim();
@@ -24,7 +30,7 @@ module.exports = function (app) {
       if (err) {
         return console.log(err);
       }
-
+      console.log(data);
       console.log(data.artists.items[1]);
       // console.log(data.artists.items[0]);
       artistUrl = data.artists.items[0].href;
@@ -43,10 +49,7 @@ module.exports = function (app) {
   // Load index page
   app.get("/", function (req, res) {
     res.render("index", {
-      indexCss: "index.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
+
     });
   });
 
@@ -61,7 +64,6 @@ module.exports = function (app) {
   });
 
   // Load signIn page
-
   app.get("/signIn", function (req, res) {
     res.render("signIn", {
       createCss: "create.css",
@@ -96,10 +98,6 @@ module.exports = function (app) {
       images: spotifyArtist.images,
       bandName: spotifyArtist.bandName,
       genres: spotifyArtist.genres,
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
     });
   })
 

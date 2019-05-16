@@ -9,6 +9,7 @@ button:hover {
   color: #fff;
 }
 
+
 a,
 a:focus,
 a:hover {
@@ -36,11 +37,13 @@ body {
   /* background-image: url("https://cdn.instructables.com/FS4/QSJ4/IKFQ0ZOQ/FS4QSJ4IKFQ0ZOQ.ANIMATED.LARGE.gif"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-color:#1C201D;
+  background-color: white;
 }
 
 #navbar {
     margin-bottom: 50px;
+    background-color: black;
+
 }
 
 /* body {
@@ -137,14 +140,14 @@ h1 { font-size: 5rem;
 
 /*Card*/
 .card{
-    background-color: transparent;
-    color: white;
+    /* background-color: transparent; */
+    color: red;
 }
 #band-card-info{
     text-align: left;
 }
 #form_message{
-    background-color: white;
+    background-color: grey;
 }
 #review-submit{
     float: left;
@@ -262,3 +265,73 @@ h1 { font-size: 5rem;
               transform: rotateY(360deg);
           }
       }
+
+
+.artist {
+  font-family: 'Rock Salt', cursive;
+  font-size: 50px;
+  width: 800px;
+  height: 80px;
+}
+
+.blur-box {
+  background-color: black;
+  box-shadow: 0 0 5px 10px #555;
+  color: floralwhite;
+}
+
+.fa {
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 3px;
+  height: 30px;
+  font-size: 15px;
+  line-height: 30px !important;
+} 
+
+.fa i {
+   margin-right: 10px;
+   padding: 15px;
+   border-radius: 4px;
+ }
+
+/* .fa {
+  background: red;
+  color: blue;
+} */
+
+/* .fa:hover {
+  color: #fff;
+} */
+
+ .fa-facebook:hover {
+  background: #3B5998;
+  margin-right: 10px;
+  color:white;
+} 
+
+.fa-youtube:hover {
+  background: #bb0000;
+  margin-right: 10px;
+  color: white;
+
+}
+
+.fa-instagram:hover {
+  /* background: #125688; */
+  color: white;
+  background-image: url("../images/ig.png");
+
+}
+
+.fa-spotify:hover {
+  background: black;
+  color:green
+
+}
+
+.fa-soundcloud:hover {
+  background:#ff5500;
+  color:  white;
+} 

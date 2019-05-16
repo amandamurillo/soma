@@ -11,17 +11,32 @@ function toggleSong() {
     song.play();
   }
 }
+
 function preload() {
   song = loadSound('js/loyal.mp3');
 }
 
+// function centerCanvas() {
+//   var x = (windowWidth - width) / 2;
+//   var y = (windowHeight - height) / 2;
+//   canvas.position(x, y);
+// }
+
+
 function setup() {
-  canvas = createCanvas(windowWidth, 200);
-  canvas.position(0, 0);
+  let myCanvas = createCanvas(windowWidth, 200);
+  // createDiv([<div id="p5example"> </div>])
+  myCanvas.parent('p5container');
+
+  // cnv.style('display', 'block');
+  myCanvas.position(0,0)
   // canvas.addClass('canvas')
-  canvas.style('z-index', '1');
-  background(100);
+  myCanvas.style('z-index', '-1');
+  // Move the canvas so it’s inside our <div id="sketch-holder">.
+  // canvas.parent('container-3');
+  // background(100);
   colorMode(HSB);
+  blendMode(BLEND)
   angleMode(DEGREES);
   button = createButton('sound').addClass('sound_btn')
   button.mousePressed(toggleSong);
@@ -47,3 +62,4 @@ function draw() {
   }
   // endShape();
 }
+

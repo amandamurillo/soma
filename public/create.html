@@ -16,11 +16,10 @@
 	 integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
 	<!-- CSS -->
 
-
-	<link type="text/css" rel="stylesheet" href="css/{{ createCss }}" media="screen" title="no title">
-	<link type="text/css" rel="stylesheet" href="css/{{ artistCss }}" media="screen" title="no title">
-	<link type="text/css" rel="stylesheet" href="css/{{ userCss }}" media="screen" title="no title">
-	<link type="text/css" rel="stylesheet" href="css/{{ signInCss }}" media="screen" title="no title">
+	<link type="text/css" rel="stylesheet" href="css/create.css" media="screen" title="no title">
+	<link type="text/css" rel="stylesheet" href="css/artist.css" media="screen" title="no title">
+	<link type="text/css" rel="stylesheet" href="css/index.css" media="screen" title="no title">
+	<link type="text/css" rel="stylesheet" href="css/signIn.css" media="screen" title="no title">
 	{{!--
 	<link rel=“stylesheet” href=“css/{{style}}” media=“screen” title=“no title” charset=“utf-8”> --}}
 	<!-- Latest jquery -->
@@ -44,8 +43,24 @@
 	<title>Home Page</title>
 </head>
 
-<body>
-	{{{body}}}
-</body>
+<body class="text-center">
+  <form class="form-signin" action="/api/create" method="POST">
+    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">CREATE ACCOUNT</h1>
+    <label for="inputName" class="sr-only">Name</label>
+    <input name="name" type="name" id="inputName" class="form-control" placeholder="Name" required autofocus>
 
-</html>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+      autofocus>
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+  </form>
+</body>

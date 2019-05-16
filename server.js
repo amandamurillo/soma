@@ -16,23 +16,23 @@ app.use(express.static("public"));
 app.use(express.static('public/images')); 
 app.use(passport.initialize());
 
-// Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-    // helpers allows us to run 
-    helpers: {
-      section: function(name, options) { 
-        if (!this._sections) this._sections = {};
-          this._sections[name] = options.fn(this); 
-          return null;
-        }
-      }
-  })
-);
+// // Handlebars
+// app.engine(
+//   "handlebars",
+//   exphbs({
+//     defaultLayout: "main",
+//     // helpers allows us to run 
+//     helpers: {
+//       section: function(name, options) { 
+//         if (!this._sections) this._sections = {};
+//           this._sections[name] = options.fn(this); 
+//           return null;
+//         }
+//       }
+//   })
+// );
 
-app.set("view engine", "handlebars");
+// app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
