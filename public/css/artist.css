@@ -37,7 +37,8 @@ body {
   /* background-image: url("https://cdn.instructables.com/FS4/QSJ4/IKFQ0ZOQ/FS4QSJ4IKFQ0ZOQ.ANIMATED.LARGE.gif"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: #010134;
+  /* background-image: url(../images/bk.png); */
 }
 
 #navbar {
@@ -147,7 +148,7 @@ h1 { font-size: 5rem;
     text-align: left;
 }
 #form_message{
-    background-color: grey;
+    background-color: white;
 }
 #review-submit{
     float: left;
@@ -178,7 +179,7 @@ h1 { font-size: 5rem;
     .searchbar:hover > .search_input{
     padding: 0 10px;
     width: 450px;
-    caret-color:red;
+    caret-color:black;
     transition: width 0.4s linear;
     }
 
@@ -217,7 +218,7 @@ h1 { font-size: 5rem;
           height: 225px;
           position: relative;
           perspective: 1000px;
-        margin-bottom: 20px;
+          margin-bottom: 20px;
         /* margin-left: 24% */
       }
       #carousel{
@@ -274,10 +275,13 @@ h1 { font-size: 5rem;
   height: 80px;
 }
 
+
 .blur-box {
   background-color: black;
   box-shadow: 0 0 5px 10px #555;
   color: floralwhite;
+  /* filter: blur(5px) brightness(0.5); */
+
 }
 
 .fa {
@@ -288,6 +292,7 @@ h1 { font-size: 5rem;
   height: 30px;
   font-size: 15px;
   line-height: 30px !important;
+  color:white;
 } 
 
 .fa i {
@@ -305,7 +310,7 @@ h1 { font-size: 5rem;
   color: #fff;
 } */
 
- .fa-facebook:hover {
+ .fa-facebook:hover{
   background: #3B5998;
   margin-right: 10px;
   color:white;

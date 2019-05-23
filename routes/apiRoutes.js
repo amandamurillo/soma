@@ -7,42 +7,41 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the profile page.
   // Otherwise the user will be sent an error
 
-  // Login User
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    console.log(req.user);
-
-    // we need to store a session or a loggedInVariable
-    res.redirect("/user");
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+    // So we're sending the user back the route to the members page because the redirect will happen on the front end
+    // They won't get this or even be able to access this page if they aren't authed
+    res.json("/members");
   });
 
   // Route for creating a new user. If the user is created successfully, proceed to log the user in, otherwise send back an error
 
   // Sign Up
-  app.post("/api/create", function (req, res) {
+  app.post("/api/signup", function(req, res) {
     console.log(req.body);
     db.User.create({
-      name: req.body.name,
       email: req.body.email,
       password: req.body.password
-    }).then(function () {
-      res.redirect("/signIn");
-    }).catch(function (err) {
+    }).then(function() {
+      res.redirect(307, "/api/login");
+    }).catch(function(err) {
       console.log(err);
       res.json(err);
       // res.status(422).json(err.errors[0].message);
     });
   });
 
-  // Tracking if the user is logged in
-  function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on 
-    if (req.isAuthenticated())
-      return next();
+  // // Tracking if the user is logged in
+  // function isLoggedIn(req, res, next) {
 
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-  }
+  //   // if user is authenticated in the session, carry on 
+  //   if (req.isAuthenticated())
+  //     return next();
+
+  //   // if they aren't redirect them to the home page
+  //   res.redirect('/');
+  // }
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
@@ -66,7 +65,7 @@ module.exports = function (app) {
     }
   });
 
-  // ************** Review ****************** //
+  // ************** Reviews ****************** //
 
   // GET route for getting all of the reviews
   app.get("/api/reviews", function (req, res) {

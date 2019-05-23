@@ -1,4 +1,12 @@
-html,
+
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+
+/* html,
 body {
   height: 100%;
 }
@@ -25,7 +33,7 @@ body {
   justify-content: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  /* background-color: #0f1723 */
+  background-color: #0f1723 
   background-color: black;
 
 }
@@ -64,4 +72,5 @@ body {
 
 .btn.btn-primary {
     color: cyan;
-}
+} 
+*/

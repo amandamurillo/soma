@@ -1,25 +1,93 @@
 var db = require("../models");
+//allows us to use relative routes to HTMl files
 var path = require("path");
+
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 var axios = require("axios");
-var Spotify = require("node-spotify-api");
-var keys = require("../keys");
-var spotify = new Spotify(keys);
 
 
-var artistUrl;
+// var Spotify = require("node-spotify-api");
+// var spotify = new Spotify(keys);
+// var SpotifyWebApi = require('spotify-web-api-node');
+// var spotify = new Spotify(keys);
 
-var spotifyArtist = {
-  url: "",
-  images: "",
-  bandName: "",
-  genres: [],
-};
+// var keys = require("../keys");
+// var spotifyApi = new SpotifyWebApi();
 
-var spotify = new Spotify(keys);
 
+// var artistUrl;
+
+// var spotifyArtist = {
+//   url: "",
+//   images: "",
+//   bandName: "",
+//   genres: [],
+// };
 
 
 module.exports = function (app) {
+
+  // Load index page
+  // app.get("/", function (req, res) {
+  //   res.render("index");
+  // });
+
+  app.get("/", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
+
+  app.get("/login", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+    // Render 404 page for any unmatched routes
+  app.get("*", function (req, res) {
+    res.render("404");
+  });
+  
+  
+    // Here we've add our isAuthenticated middleware to this route.
+    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+
+  // // Load signIn page
+  // app.get("/signIn", function (req, res) {
+  //   res.render("signIn");
+  // });
+
+  // // Load user profile page
+  // app.get("/user", function (req, res) {
+  //   res.render("user");
+  // });
+
+  app.get("/", function (req, res) {
+    db.Example.findAll({}).then(function (dbExamples) {
+      res.render("members", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/artist", function (req, res) {
+    res.render("artist", {
+      url: spotifyArtist.url,
+      images: spotifyArtist.images,
+      bandName: spotifyArtist.bandName,
+      genres: spotifyArtist.genres,
+    });
+  })
 
   app.post("/search-spotify", function (req, res) {
     var artistSearch = req.body.artist.trim();
@@ -46,75 +114,13 @@ module.exports = function (app) {
     // res.redirect("/");
   });
 
-  // Load index page
-  app.get("/", function (req, res) {
-    res.render("index", {
-
-    });
-  });
-
-  // Load create account page
-  app.get("/create", function (req, res) {
-    res.render("create", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
-    });
-  });
-
-  // Load signIn page
-  app.get("/signIn", function (req, res) {
-    res.render("signIn", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
-    });
-  })
-
-  // Load user profile page
-  app.get("/user", function (req, res) {
-    res.render("user", {
-      createCss: "create.css",
-      artistCss: "artist.css",
-      signInCss: "signIn.css",
-      userCss: "user.css"
-    });
-  });
-
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.render("main", {
-        msg: "Welcome!",
-        examples: dbExamples
+  // Load example page and pass in an example by id
+  app.get("/example/:id", function (req, res) {
+    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+      res.render("example", {
+        example: dbExample
       });
     });
   });
 
-  app.get("/artist", function (req, res) {
-    res.render("artist", {
-      url: spotifyArtist.url,
-      images: spotifyArtist.images,
-      bandName: spotifyArtist.bandName,
-      genres: spotifyArtist.genres,
-    });
-  })
-
-
-
-  // Load example page and pass in an example by id
-  // app.get("/example/:id", function (req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
-
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
 };
