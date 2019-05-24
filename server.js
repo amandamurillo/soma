@@ -1,8 +1,8 @@
-// require("dotenv").config();
+// Requiring necessary npm packages
 var express = require("express");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-
+// Requiring passport as we've configured it
 var passport = require("./config/passport");
 
 // Setting up port and requiring models for syncing
@@ -20,7 +20,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 // app.use(express.static('public/images')); 
 
-
+// app.set('view engine', 'html');
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);

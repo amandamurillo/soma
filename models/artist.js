@@ -1,3 +1,4 @@
+
 module.exports = function (sequelize, DataTypes) {
     var Artist = sequelize.define("Artist", {
         artist_name: {

@@ -6,18 +6,10 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 var axios = require("axios");
 
-
-// var Spotify = require("node-spotify-api");
-// var spotify = new Spotify(keys);
-// var SpotifyWebApi = require('spotify-web-api-node');
-// var spotify = new Spotify(keys);
-
 // var keys = require("../keys");
 // var spotifyApi = new SpotifyWebApi();
 
-
 // var artistUrl;
-
 // var spotifyArtist = {
 //   url: "",
 //   images: "",
@@ -28,11 +20,6 @@ var axios = require("axios");
 
 module.exports = function (app) {
 
-  // Load index page
-  // app.get("/", function (req, res) {
-  //   res.render("index");
-  // });
-
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -41,7 +28,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
+
   app.get("/login", function(req, res) {
+    console.log(req)
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
@@ -49,27 +38,12 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-    // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
-  
-  
-    // Here we've add our isAuthenticated middleware to this route.
-    // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  // // Load signIn page
-  // app.get("/signIn", function (req, res) {
-  //   res.render("signIn");
-  // });
-
-  // // Load user profile page
-  // app.get("/user", function (req, res) {
-  //   res.render("user");
-  // });
 
   app.get("/", function (req, res) {
     db.Example.findAll({}).then(function (dbExamples) {
@@ -80,14 +54,14 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/artist", function (req, res) {
-    res.render("artist", {
-      url: spotifyArtist.url,
-      images: spotifyArtist.images,
-      bandName: spotifyArtist.bandName,
-      genres: spotifyArtist.genres,
-    });
-  })
+  // app.get("/artist", function (req, res) {
+  //   res.render("artist", {
+  //     url: spotifyArtist.url,
+  //     images: spotifyArtist.images,
+  //     bandName: spotifyArtist.bandName,
+  //     genres: spotifyArtist.genres,
+  //   });
+  // })
 
   app.post("/search-spotify", function (req, res) {
     var artistSearch = req.body.artist.trim();

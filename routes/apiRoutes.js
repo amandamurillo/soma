@@ -1,8 +1,17 @@
-// Requiring our models and passport as we've configured it
+// *********************************************************************************
+// api-routes.js - this file offers a set of routes for displaying and saving data to the db
+// *********************************************************************************
+
+// Dependencies
+// =============================================================
 var db = require("../models");
 var passport = require("../config/passport");
 
+// Routes
+// =============================================================
 module.exports = function (app) {
+
+    // ************** User ****************** //
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the profile page.
   // Otherwise the user will be sent an error
@@ -27,21 +36,10 @@ module.exports = function (app) {
     }).catch(function(err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
+      res.status(422).json(err.errors[0].message);
     });
   });
 
-
-  // // Tracking if the user is logged in
-  // function isLoggedIn(req, res, next) {
-
-  //   // if user is authenticated in the session, carry on 
-  //   if (req.isAuthenticated())
-  //     return next();
-
-  //   // if they aren't redirect them to the home page
-  //   res.redirect('/');
-  // }
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
