@@ -24,7 +24,31 @@
 
 </head>
 
+
+
 <body>
+		<div class="container">
+	 
+			<h1>Demoscene Time Machine</h1>
+	 
+			<iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:4ikPJGH7I7IyhdBJs1GMhh&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+	 
+			<h2>Discography</h2>
+			<p>Click an album cover to hear a 30 second preview, or click the button to play the album on Spotify!</p><br />
+	 
+			<div id="results"></div>
+			<button type="submit" class="test" id="button1"> TEST </button>
+	 
+		</div>
+	 
+		<script id="results-template" type="text/x-handlebars-template">
+		  {{#each albums.items}}
+		  <div style="background-image:url({{images.0.url}})" data-album-id={{id}} class="cover"><a href="{{external_urls.spotify}}"><div class="spotify-button"><img src="https://developer.spotify.com/wp-content/uploads/2014/06/play_on_spotify-green.png" /></div></a></div>
+		  {{/each}}
+		</script>
+	 
+
+<!-- <body>
 	<nav class="navbar navbar-expand-lg navbar-black bg-black" id="navbar">
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
@@ -137,7 +161,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<br><br>
 	<footer class="footer">
@@ -146,13 +170,11 @@
 		</div>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<!-- Material for bootstrap -->
-	<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-	<script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<script type="text/javascript" src="./js/chart.js"></script>
+	<!-- <script type="text/javascript" src="./js/chart.js"></script>  -->
+	<script type="text/javascript" src="./js/artist.js"></script>
+
 
 </body>
 

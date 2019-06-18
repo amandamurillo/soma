@@ -9,15 +9,6 @@ a:hover {
   color: #fff;
 }
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #0f1723;
-  border: .05rem solid #fff;
-}
 
 /*
  * Base structure
@@ -29,9 +20,28 @@ html,body {
   
 }
 
+.homebtns {
+  margin-top: 40px;
+
+}
+
 .sound_btn {
-  height: 100px;
-  width:50px;
+  /* height: 50px; */
+  align-self: flex-start;
+  /* width: 50px; */
+  background-color: aqua;
+  border: .05rem solid #fff;
+}
+
+/* Custom default button */
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #0f1723;
+  border: .05rem solid #fff;
 }
 
 /* .canvas {
@@ -69,13 +79,11 @@ h1 { font-size: 5rem;
     margin-bottom: 100px;
 }
 
-
 .fig_btn {
 
   height :200px;
   width: 200px;
 }
-
 
 /*
  * Header
@@ -152,9 +160,10 @@ h1 { font-size: 5rem;
 
 .searchbar{
     margin-bottom: auto;
-    margin-top: auto;
+    margin-top: 30px;
     height: 60px;
-    background-color: #353b48;
+    background-color: yellow;
+    /* background-color: #353b48; */
     border-radius: 30px;
     padding: 10px;
     }
@@ -266,7 +275,7 @@ h1 { font-size: 5rem;
           }
       }
 
-#defaultCanvas0 {
+/* #defaultCanvas0 {
         width: 1271px;
         height: 200px;
         position: absolute;
@@ -274,7 +283,7 @@ h1 { font-size: 5rem;
         top: 0px;
         z-index: 1;
         margin-top: 650px;
-}
+} */
 
 #soma {
 
@@ -285,7 +294,7 @@ h1 { font-size: 5rem;
 
 .homebtns {
   margin-top: 40px;
-
+  /* z-index: 2 */
 }
 
 .container-3 {

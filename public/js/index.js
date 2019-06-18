@@ -4,41 +4,38 @@ var button;
 var w;
 var canvas;
 
-function toggleSong() {
-  if (song.isPlaying()) {
-    song.stop();
-  } else {
-    song.play();
-  }
-}
 
 function preload() {
   song = loadSound('js/loyal.mp3');
 }
-
 // function centerCanvas() {
-//   var x = (windowWidth - width) / 2;
-//   var y = (windowHeight - height) / 2;
+//   var x = (windowWidth - width) / 4;
+//   var y = (windowHeight - height) / 4;
 //   canvas.position(x, y);
 // }
 
-
 function setup() {
-  let myCanvas = createCanvas(windowWidth, 200);
-  // createDiv([<div id="p5example"> </div>])
-  myCanvas.parent('p5container');
+  canvas = createCanvas(windowWidth, 300);
+  // centerCanvas();
+  // canvas.style('z-index', '-1');
+  // canvas.createDiv(['<div id="sketch-holder"> </div>'])
+  // myCanvas.parent('homebtns');
+  canvas.style('display', 'block');
+  canvas.position(100,200)
+  canvas.style('height', '300px')
+        .style('position', 'absolute')
+        .style('left', '0px')
+        .style('height', '300px')
+        .style('position', 'absolute')
+        .style('left', '0px')
+        .style('top', '650px')
+        // .style('z-index', '-1')
 
-  // cnv.style('display', 'block');
-  myCanvas.position(0,0)
-  // canvas.addClass('canvas')
-  myCanvas.style('z-index', '-1');
-  // Move the canvas so it’s inside our <div id="sketch-holder">.
-  // canvas.parent('container-3');
-  // background(100);
+  // background('#050725');
   colorMode(HSB);
   blendMode(BLEND)
   angleMode(DEGREES);
-  button = createButton('sound').addClass('sound_btn')
+  button = createButton('sound').addClass('sound_btn').addClass('cover').addClass('btn-lg')
   button.mousePressed(toggleSong);
   song.play();
   fft = new p5.FFT(0, 64);
@@ -47,7 +44,7 @@ function setup() {
 
 
 function draw() {
-  background(0);
+  background('#050725');
   var spectrum = fft.analyze();
   // console.log(spectrum);
   // stroke(255);
@@ -61,5 +58,13 @@ function draw() {
     //vertex(x, y);
   }
   // endShape();
+}
+
+function toggleSong() {
+  if (song.isPlaying()) {
+    song.stop();
+  } else {
+    song.play();
+  }
 }
 

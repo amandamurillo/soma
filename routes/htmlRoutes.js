@@ -1,15 +1,8 @@
 var db = require("../models");
 //allows us to use relative routes to HTMl files
 var path = require("path");
-
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-var axios = require("axios");
-
-// var keys = require("../keys");
-// var spotifyApi = new SpotifyWebApi();
-
-// var artistUrl;
+// var axios = require("axios");
 // var spotifyArtist = {
 //   url: "",
 //   images: "",
@@ -54,6 +47,15 @@ module.exports = function (app) {
     });
   });
 
+    // Load example page and pass in an example by id
+    app.get("/example/:id", function (req, res) {
+      db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
+        res.render("example", {
+          example: dbExample
+        });
+      });
+    });
+
   // app.get("/artist", function (req, res) {
   //   res.render("artist", {
   //     url: spotifyArtist.url,
@@ -63,38 +65,28 @@ module.exports = function (app) {
   //   });
   // })
 
-  app.post("/search-spotify", function (req, res) {
-    var artistSearch = req.body.artist.trim();
+  // app.post("/search-spotify", function (req, res) {
+  //   var artistSearch = req.body.artist.trim();
 
-    spotify.search({ type: "artist", query: artistSearch, limit: 4 }, function (err, data) {
+  //   spotify.search({ type: "artist", query: artistSearch, limit: 4 }, function (err, data) {
 
-      // Error handler
-      if (err) {
-        return console.log(err);
-      }
-      console.log(data);
-      console.log(data.artists.items[1]);
-      // console.log(data.artists.items[0]);
-      artistUrl = data.artists.items[0].href;
-      spotifyArtist.url = data.artists.items[0].external_urls.spotify;
-      spotifyArtist.images = data.artists.items[0].images[0].url;
-      spotifyArtist.bandName = data.artists.items[0].name;
-      spotifyArtist.genres = data.artists.items[0].genres[0];
+  //     // Error handler
+  //     if (err) {
+  //       return console.log(err);
+  //     }
+  //     console.log(data);
+  //     console.log(data.artists.items[1]);
+  //     // console.log(data.artists.items[0]);
+  //     artistUrl = data.artists.items[0].href;
+  //     spotifyArtist.url = data.artists.items[0].external_urls.spotify;
+  //     spotifyArtist.images = data.artists.items[0].images[0].url;
+  //     spotifyArtist.bandName = data.artists.items[0].name;
+  //     spotifyArtist.genres = data.artists.items[0].genres[0];
 
-      res.redirect("/artist");
+  //     res.redirect("/artist");
 
-    });
+  //   });
 
-    // res.redirect("/");
-  });
-
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
+  //   // res.redirect("/");
+  // });
 };
