@@ -1,3 +1,4 @@
+![](gify2.gif)
 
 
 ## Soma
@@ -6,73 +7,31 @@
 
 Soma is soma-ch more than a regular schmegular social media platform. Soma allows you to review live performances from an artist(s), create your own profile to save upcoming concert dates, and make sure that the artist(s) you sold your left kidney to see will be worth it. 
 
-Soma uses the Bandsintown API to get upcoming concert dates that you can add to your profile calendar, the Spotify API to get songs,  
+Soma uses P5.js to create an fun, creative home page that plays a song while you lose yourself in our spinning carousel. 
+
+Soma also uses the Spotify API to retreive a searched artist. You can then leave a (kind, constructive) review on the artist's page. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Clone the repo and run 
 
-
-### Prerequisites
-
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-
-Dependencies are listed in package JSON. To install, open the file and type the following in your terminal:
-
-npm i
+Soma's dependencies are listed in package.json. To install, open the file and type the following in your terminal:
 
 ```
-Give the example
+npm install
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/) 
+* [Node](https://nodejs.org/en/docs/) - Runtime JS environment used
+* [Passport](http://www.passportjs.org/) - Authentication middeware used
+* [Express](https://expressjs.com/en/4x/api.html) - Backend framework used
+* [SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-2017/) - Dependency Management
+* [Sequelize](http://docs.sequelizejs.com/) - Used to create models and associations 
 
 ## Authors
 
