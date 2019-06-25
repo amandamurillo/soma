@@ -1,25 +1,25 @@
-
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
 
 form.signup,
 form.login {
   margin-top: 50px;
+  color:yellow;
 }
 
- html,
+h2 {
+  color:aqua;
+}
+
+html,
 body {
   height: 100%;
-  background-color:#1C201D;
+  background-color: #050725;
 } 
-
-.h3{
- 
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-        color: white;
-        text-shadow: 2px 3px 5px red;
-    
-
-}
 
 body {
   display: -ms-flexbox;
@@ -34,8 +34,17 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #0f1723 
-  background-color: black;
+}
 
+.label {
+  color: yellow;
+}
+
+.h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 3px 5px red;
 }
 
 .form-signin {
@@ -44,9 +53,11 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+
 .form-signin .checkbox {
   font-weight: 400;
 }
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -54,6 +65,7 @@ body {
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }

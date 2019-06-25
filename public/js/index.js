@@ -17,16 +17,15 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth, 300);
   // centerCanvas();
-  // canvas.style('z-index', '-1');
   // canvas.createDiv(['<div id="sketch-holder"> </div>'])
   // myCanvas.parent('homebtns');
   canvas.style('display', 'block');
   canvas.position(100,200)
   canvas.style('height', '300px')
-        .style('position', 'absolute')
+        // .style('position', 'absolute')
         .style('left', '0px')
         .style('height', '300px')
-        .style('position', 'absolute')
+        .style('position', 'fixed')
         .style('left', '0px')
         .style('top', '650px')
         // .style('z-index', '-1')
@@ -42,12 +41,9 @@ function setup() {
   w = width / 64;
 }
 
-
 function draw() {
   background('#050725');
   var spectrum = fft.analyze();
-  // console.log(spectrum);
-  // stroke(255);
   noStroke();
   // beginShape();
   for (var i = 0; i < spectrum.length; i++) {

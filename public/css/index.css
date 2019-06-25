@@ -9,11 +9,9 @@ a:hover {
   color: #fff;
 }
 
-
 /*
  * Base structure
  */
-
 html,body {
   height: 100%;
   background-color: #050725;
@@ -215,7 +213,7 @@ h1 { font-size: 5rem;
       *:after{
           box-sizing: border-box;
       }
-      .container-2{
+      .container-carousel{
         margin: 0px auto;
         width: 210px;
         height: 225px;
@@ -252,44 +250,32 @@ h1 { font-size: 5rem;
       #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
       #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
       
-      img{
-          cursor: pointer;
-          transition: all .5s ease;
-          height:200px;
-          width: 200px
-      }
+img { 
+  cursor: pointer;
+  transition: all .5s ease;
+  height:200px;
+  width: 200px
+}
 
-      .custom-style {
-        height:200px;
-        width: 200px
-      }
+.custom-style {
+  height:200px;
+  width: 200px
+}
 
 
       
-      @keyframes rotation{
-          from{
-              transform: rotateY(0deg);
-          }
-          to{
-              transform: rotateY(360deg);
-          }
-      }
-
-/* #defaultCanvas0 {
-        width: 1271px;
-        height: 200px;
-        position: absolute;
-        left: 0px;
-        top: 0px;
-        z-index: 1;
-        margin-top: 650px;
-} */
+@keyframes rotation{
+  from{
+      transform: rotateY(0deg);
+  }
+  to{
+      transform: rotateY(360deg);
+    }
+}
 
 #soma {
-
-    width: 200px;
-    height: 200px;
-
+  width: 200px;
+  height: 200px;
 }
 
 .homebtns {
@@ -297,6 +283,6 @@ h1 { font-size: 5rem;
   /* z-index: 2 */
 }
 
-.container-3 {
+.container-p5 {
   margin-top: 10px;
 }

@@ -1,12 +1,5 @@
-
-// Dependencies
-// =============================================================
-
 var db = require("../models");
 var passport = require("../config/passport");
-
-// Routes
-// =============================================================
 
 // ************** User ****************** //
 
@@ -65,8 +58,6 @@ module.exports = function (app) {
 
       // res.json("Hope this works");
     });
-
- // Create a new review
 
 
   // ************** Reviews ****************** //
