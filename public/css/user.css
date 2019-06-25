@@ -1,7 +1,6 @@
 /*
  * Globals
  */
-
 /* Links */
 button,
 button:focus,
@@ -25,15 +24,12 @@ a:hover {
   border: .05rem solid #fff;
 }
 
-
 /*
  * Base structure
  */
-
 html,
 body {
   /* height: 100%; */
-  /* background-image: url("https://cdn.instructables.com/FS4/QSJ4/IKFQ0ZOQ/FS4QSJ4IKFQ0ZOQ.ANIMATED.LARGE.gif"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-color:#1C201D;
@@ -196,7 +192,6 @@ h1 { font-size: 5rem;
     }
 
     /* carousel */
-
     *{
         margin: 0;
         padding: 0;

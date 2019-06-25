@@ -1,4 +1,3 @@
-var handlebars = require('handlebars');
 // find template and compile it
 var templateSource = document.getElementById('results-template').innerHTML,
     template = Handlebars.compile(templateSource),

@@ -5,10 +5,11 @@ form.login {
   margin-top: 50px;
 }
 
-/* html,
+ html,
 body {
   height: 100%;
-}
+  background-color:#1C201D;
+} 
 
 .h3{
  
@@ -72,5 +73,5 @@ body {
 .btn.btn-primary {
     color: cyan;
 } 
-*/
+
 
