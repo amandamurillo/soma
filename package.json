@@ -28,7 +28,7 @@
     "p5": "^0.7.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.44.0",
+    "sequelize": "^5.15.1",
     "spotify-web-api-node": "^4.0.0"
   },
   "devDependencies": {
